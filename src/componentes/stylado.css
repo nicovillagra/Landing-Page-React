@@ -1,0 +1,60 @@
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+li {
+  padding: 10px;
+  color: white;
+}
+.logo{
+  background:url(./assets/logo2.png) no-repeat center/cover;
+  width: 100px;
+  height: 100px;
+}
+nav{
+  background-color:black;
+  width:100%;
+  height: auto;
+  position: fixed;
+  margin-top: 25px;
+  margin-left: -1233px;
+}
+.container-portada{
+  background: url(./assets/hero3.jpg )no-repeat;
+  width: 100%;
+  height: 800px;
+}
+@font-face {
+  font-family:font2;
+  src: url(./assets/Poppins-ExtraBold.ttf);
+}
+@font-face {
+  font-family:font3;
+  src: url(./assets/LeagueSpartan-Bold.otf);
+}
+@font-face {
+  font-family:font4;
+  src: url(./assets/Poppins-Medium.ttf);
+}
+h1{
+  font-family:font2;
+}
+a{
+  font-family: font2;
+}
+.PhoneImg{
+  background: url(./assets/phone.png) no-repeat;
+  width: 300px;
+  height: 400px;
+}
