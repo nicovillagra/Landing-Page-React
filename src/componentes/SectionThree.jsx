@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { data } from '../data'
 
 
 const Section = styled.section`
 width:100%;
 height:800px;
-background:white;
+background:#bdbffa;
 display:flex;
 gap:5px;
 justify-content: space-evenly;
@@ -59,6 +59,7 @@ display: flex;
 flex-direction: column;
 gap: .2rem;
 margin-top: .5rem;
+align-items: flex-start;
 `
 const CheckListItem = styled.li`
 display: flex;
@@ -86,71 +87,26 @@ transform: translate(3px, 3px);
 
 const SectionThree = () => {
     return (
+        
         <Section>
-            <Card>
+            {data.map(product =>(
+                <Card key={product.id}>
                 <PricingBlockContent>
-                    <PricingPlan>Plan Basico</PricingPlan>
+                    <PricingPlan>{product.name}</PricingPlan>
                     <PriceValue data-currency="$ USD" data-currency-simple="USD">
-                        <PriceNumber>$<PriceInteger>5.99</PriceInteger></PriceNumber>
+                        <PriceNumber>$<PriceInteger>{product.price}</PriceInteger></PriceNumber>
                         <PriceDiscount>/mes</PriceDiscount>
                     </PriceValue>
-                    <PricingNote>😎Ahorra Al Maximo</PricingNote>
+                    <PricingNote>{product.note}</PricingNote>
                     <CheckList>
-                        <CheckListItem>500 Mensajes Gratis</CheckListItem>
-                        <CheckListItem>500 Mb De Internet</CheckListItem>
-                        <CheckListItem>100 Minutos De Llamadas Gratis</CheckListItem>
-                        <CheckListItem>Descuento En Nuestra Tienda</CheckListItem>
+                        <CheckListItem>{product.benefitOne}</CheckListItem>
+                        <CheckListItem>{product.benefitTwo}</CheckListItem>
+                        <CheckListItem>{product.benefitTrhee}</CheckListItem>
+                        <CheckListItem>{product.benefitFour}</CheckListItem>
                     </CheckList>
                     <Button>Comprar</Button>
                 </PricingBlockContent></Card>
-                <Card>
-                <PricingBlockContent>
-                    <PricingPlan>Plan GraPhone</PricingPlan>
-                    <PriceValue data-currency="$ USD" data-currency-simple="USD">
-                        <PriceNumber>$<PriceInteger>9.99</PriceInteger></PriceNumber>
-                        <PriceDiscount>/mes</PriceDiscount>
-                    </PriceValue>
-                    <PricingNote>👌Mas Popular</PricingNote>
-                    <CheckList>
-                        <CheckListItem>1000 Mensajes Gratis</CheckListItem>
-                        <CheckListItem>3 GB de Internet</CheckListItem>
-                        <CheckListItem>Llamadas Gratis</CheckListItem>
-                        <CheckListItem>30% de descuento en varios productos de nuestra tienda</CheckListItem>
-                    </CheckList>
-                    <Button>Comprar</Button>
-                </PricingBlockContent></Card>
-                <Card>
-                <PricingBlockContent>
-                    <PricingPlan>Plan Viajero</PricingPlan>
-                    <PriceValue data-currency="$ USD" data-currency-simple="USD">
-                        <PriceNumber>$<PriceInteger>15.99</PriceInteger></PriceNumber>
-                        <PriceDiscount>/mes</PriceDiscount>
-                    </PriceValue>
-                    <PricingNote>😊Nosotros te conectamos</PricingNote>
-                    <CheckList>
-                        <CheckListItem>Mensajes Gratis</CheckListItem>
-                        <CheckListItem>5 GB de Internet En El Mundo</CheckListItem>
-                        <CheckListItem>Llamadas Internacionales GRATIS</CheckListItem>
-                        <CheckListItem>1 GB de redes gratis</CheckListItem>
-                    </CheckList>
-                    <Button>Comprar</Button>
-                </PricingBlockContent></Card>
-                <Card>
-                <PricingBlockContent>
-                    <PricingPlan>Plan Anual</PricingPlan>
-                    <PriceValue data-currency="$ USD" data-currency-simple="USD">
-                        <PriceNumber>$<PriceInteger>50.99</PriceInteger></PriceNumber>
-                        <PriceDiscount>/Año</PriceDiscount>
-                    </PriceValue>
-                    <PricingNote>😜Tu Mejor Año</PricingNote>
-                    <CheckList>
-                        <CheckListItem>Mensajes Gratis y Whatsapp Gratis</CheckListItem>
-                        <CheckListItem>3 GB de Internet Todos Los Meses</CheckListItem>
-                        <CheckListItem>Llamadas Gratis</CheckListItem>
-                        <CheckListItem>40% Off es nuestros productos</CheckListItem>
-                    </CheckList>
-                    <Button>Comprar</Button>
-                </PricingBlockContent></Card>
+            ))}
         </Section>
     )
 }

@@ -5,6 +5,8 @@ import Menu from './componentes/menu';
 import Header from './componentes/header';
 import SectionTwo from './componentes/SectionTwo';
 import SectioFour from './componentes/SectioFour';
+import Modal from './componentes/Modal';
+import SectionFive from './componentes/SectionFive';
 
 function App() {
   return (
@@ -14,6 +16,7 @@ function App() {
     <Header/>
     <SectionTwo/>
     <SectioFour/>
+    <SectionFive/>
     </ChakraProvider>
     </>
   );
