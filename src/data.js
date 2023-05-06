@@ -44,3 +44,12 @@ export const data = [
     }
 
 ]
+
+export const CardsPhone = [
+    { id: 1, name: 'iPhone 14 pro ', price:304.000, marca:'iPhone', img:'./componentes/assets/phone2.jpg' },
+    { id: 2, name: 'iPhone 13 pro ', price: 244.000, marca:'iPhone', img:'./componentes/assets/phone2.jpg' },
+    { id: 3, name: 'iPhone 12 pro ', price:204.000, marca:'iPhone', img:'./componentes/assets/phone2.jpg' },
+    { id: 3, name: 'Galaxy S21', price:599.000, marca:'Samsung', img:'./componentes/assets/phone2.jpg' },
+    { id: 4, name: 'Galaxy S20', price:499.000, marca:'Samsung', img:'./componentes/assets/phone2.jpg' },
+ ];
+  
