@@ -49,7 +49,13 @@ const Card = styled.div`
     height: 3.125em;
   }
 `;
-
+const CardImage = styled.div`
+width: 100%;
+height: 100%;
+display: grid;
+place-items: center;
+background-image: url(${props => props.imageSrc || ''});
+`;
 const Image = styled.div`
   background: rgb(241, 241, 241);
   width: 100%;
@@ -236,7 +242,7 @@ const CardComponent = () => {
             <div className="card-container">
               {filteredData.map((item) => (
                      <Card>
-                     <img src={item.img} alt={item.name} />
+                     <CardImage imageSrc={item.img} />
                        <Text></Text>
                      <Title2>{item.name}</Title2>
                      <Price>$ {item.price} U$D</Price>
