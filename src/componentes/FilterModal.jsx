@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from 'styled-components';
 import { CardsPhone } from "../data";
+import './stylado.css'
 
 
 const Card = styled.div`
@@ -235,9 +236,8 @@ const CardComponent = () => {
             <div className="card-container">
               {filteredData.map((item) => (
                      <Card>
-                     <div className='PhoneimgModal' style={{ backgroundImage: `url(${item.img})no-repeat center/cover` }}>
+                     <img src={item.img} alt={item.name} />
                        <Text></Text>
-                     </div>
                      <Title2>{item.name}</Title2>
                      <Price>$ {item.price} U$D</Price>
                    </Card>))}
