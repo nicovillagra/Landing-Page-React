@@ -1,6 +1,6 @@
 export const data = [
     {
-        id:1,
+        id:21,
         name:'Plan Basico',
         price:5.99,
         note:'😎Ahorra al maximo',
@@ -11,7 +11,7 @@ export const data = [
         quantity:1,
     },
     {
-        id:2,
+        id:22,
         name:'Plan GraPhone',
         price:9.99,
         note:'😜El mejor plan',
@@ -22,7 +22,7 @@ export const data = [
         quantity:1,
     },
     {
-        id:3,
+        id:23,
         name:'Plan Viajero',
         price:5.99,
         note:'✈Vijamos con vos',
@@ -32,7 +32,7 @@ export const data = [
         benefitFour:'Cobertura Internacional',
         quantity:1,
     },{
-        id:4,
+        id:24,
         name:'Plan Anual',
         price:50.99,
         note:'🌠Siempre contigo',
@@ -46,10 +46,29 @@ export const data = [
 ]
 
 export const CardsPhone = [
-    { id: 1, name: 'iPhone 14 pro ', price:304.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg' },
-    { id: 2, name: 'iPhone 13 pro ', price: 244.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg' },
-    { id: 3, name: 'iPhone 12 pro ', price:204.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg' },
-    { id: 3, name: 'Galaxy S21', price:599.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg' },
-    { id: 4, name: 'Galaxy S20 FE', price:499.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg' },
+    { id: 1, name: 'iPhone 14 pro Max ', price:1.304, marca:'iPhone', icono: "faPhone" , quantity:1 },
+    { id: 2, name: 'iPhone 13', price: 1244.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 3, name: 'iPhone 12 pro ', price:999.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 4, name: 'Galaxy S21', price:1300.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 5, name: 'Galaxy S20 FE', price:1100.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 6, name: 'iPhone 11 ', price:600.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 7, name: 'iPhone X ', price:450.000, marca:'iPhone', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 8, name: 'Samsung Flip ', price:1950.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 9, name: 'Samsung Note20 ', price:1450.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 10, name: 'Samsung A52 ', price:750.000, marca:'Samsung', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 11, name: 'Motorola G20 ', price:1050.000, marca:'Motorola', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 12, name: 'Motorola G9 plus ', price:990.000, marca:'Motorola', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 13, name: 'Motorola One Fusion ', price:950.000, marca:'Motorola', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 14, name: 'Motorola E7 ', price:750.000, marca:'Motorola', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 15, name: 'Motorola G30', price:1950.000, marca:'Motorola', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 16, name: 'Huawei P9 Lite ', price:850.000, marca:'Huawei', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 17, name: 'Huawei Y6 ', price:700.000, marca:'Huawei', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 18, name: 'Huawei P10 Plus   ', price:1050.000, marca:'Huawei', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 19, name: 'Huawei P40 Pro ', price:1750.000, marca:'Huawei', img:'./componentes/assets/phone6.jpg', quantity:1 },
+    { id: 20, name: 'Huawei Mate30 Pro ', price:1550.000, marca:'Huawei', img:'./componentes/assets/phone6.jpg', quantity:1 },
+
+
+
+
  ];
   

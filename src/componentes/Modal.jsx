@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import imagen from './assets/Motorola1.jpg'
 
 const Card = styled.div`
 width: 100%;
@@ -18,7 +19,6 @@ width: 50px;
 height: 50px;
 margin-left: 10px;
 border-radius: 10px;
-background: linear-gradient(#d7cfcf, #9198e5);
 `
 const TextBox = styled.div`
 width: calc(100% - 90px);
@@ -45,7 +45,7 @@ const P = styled.p`
 const Modal = () => {
   return (
 <Card>
-  <Img></Img>
+  <Img><img src={imagen} alt="" style={{width:'100%',height:'100%'}} /></Img>
   <TextBox>
     <textContent>
       <H1>Clans of Clash</H1>

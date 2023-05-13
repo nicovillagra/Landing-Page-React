@@ -6,8 +6,8 @@ import './stylado.css'
 
 const Card = styled.div`
   position: relative;
-  width: 11.875em;
-  height: 16.5em;
+  width:200px;
+  height:300px;
   box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 120ms;
@@ -17,6 +17,7 @@ const Card = styled.div`
   background: #fff;
   padding: 0.5em;
   padding-bottom: 3.4em;
+  flex-direction: column;
 
   &:after {
     content: "Add to Cart";
@@ -55,6 +56,33 @@ height: 100%;
 display: grid;
 place-items: center;
 background-image: url(${props => props.imageSrc || ''});
+`;
+const Button = styled.button`
+  display: inline-block;
+  padding: 5px 15px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #ff5252;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0px #000;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #fff;
+    color: #ff5252;
+    border: 2px solid #ff5252;
+    box-shadow: 5px 5px 0px #ff5252;
+  }
+
+  &:active {
+    background-color: #fcf414;
+    box-shadow: none;
+    transform: translateY(4px);
+  }
 `;
 const Image = styled.div`
   background: rgb(241, 241, 241);
@@ -125,6 +153,7 @@ const FlipCardFront = styled.div`
   background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
     rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
   color: coral;
+  z-index:1;
 `;
 
 const FlipCardBack = styled.button`
@@ -151,108 +180,138 @@ const FlipCardContainer = styled.div`
     transform: rotateY(180deg);
   }
 `;
-const Section = styled.section`
+const Section = styled.div`
+width:100%;
+background:#bdbffa;
+height:300px;
+gap:60px;
+display:flex;
+align-items: center;
+justify-content: center;
+
+`
+const SectionContainer = styled.section`
 width:100%;
 background:#bdbffa;
 height:800px;
-display: grid;
-grid-template-columns: 300px 300px;
-grid-template-rows: 300px 300px;
-justify-items: center;
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+const CardContainer = styled.div`
+width:100%;
+height:600px;
+display:flex;
+background:#bdbffa;
+gap:30px;
 align-items: center;
 justify-content: center;
 
 `
 
-const CardComponent = () => {
-    const [selected, setSelected] = useState(null);
-    const filteredData = CardsPhone.filter((item) => {
-      if (selected === null) return false;
-      return item.marca === selected;
-    });
-  
-    const handleClick = (marca) => {
-      if (marca === selected) {
-        setSelected(null);
-      } else {
-        setSelected(marca);
-      }
+const CardComponent = ({allProducts,setAllProducts}) => {
+  const [selected, setSelected] = useState(null);
+  const filteredData = CardsPhone.filter((item) => {
+    if (selected === null) return false;
+    return item.marca === selected;
+  });
+  const onAddProducts = (product) =>{
+    if(allProducts.find(item =>item.id === product.id)){
+      const products = allProducts.map(item => item.id === product.id ? {...item, quantity:item.quantity + 1}:
+        item);
+        return setAllProducts([...products])
+
     };
-  
-    return (
-      <div>
-  <Section>
-      <FlipCardContainer>
-        <FlipCard>
-          <FlipCardInner>
-            <FlipCardFront>
-              <Title>Apple</Title>
-            </FlipCardFront>
-            <FlipCardBack onClick={() => handleClick("iPhone")}>
-              <Title>Comprar</Title>
-            </FlipCardBack>
-          </FlipCardInner>
-        </FlipCard>
-      </FlipCardContainer>
 
-
-      <FlipCardContainer>
-        <FlipCard>
-          <FlipCardInner>
-            <FlipCardFront>
-              <Title>Samsung</Title>
-            </FlipCardFront>
-            <FlipCardBack onClick={() => handleClick("Samsung")}>
-              <Title>Comprar</Title>
-            </FlipCardBack>
-          </FlipCardInner>
-        </FlipCard>
-      </FlipCardContainer>
-
-      <FlipCardContainer>
-        <FlipCard>
-          <FlipCardInner>
-            <FlipCardFront>
-              <Title>Motorola</Title>
-            </FlipCardFront>
-            <FlipCardBack onClick={() => handleClick("iPhone")}>
-              <Title>Comprar</Title>
-            </FlipCardBack>
-          </FlipCardInner>
-        </FlipCard>
-      </FlipCardContainer>
-
-      <FlipCardContainer>
-        <FlipCard>
-          <FlipCardInner>
-            <FlipCardFront>
-              <Title>Huaweii</Title>
-            </FlipCardFront>
-            <FlipCardBack onClick={() => handleClick("iPhone")}>
-              <Title>Comprar</Title>
-            </FlipCardBack>
-          </FlipCardInner>
-        </FlipCard>
-      </FlipCardContainer>
-    </Section>
+    setAllProducts([...allProducts,product]);
     
+}
+console.log(allProducts)
 
-        {selected !== null && (
-          <div>
-            <div className="card-container">
-              {filteredData.map((item) => (
-                     <Card>
-                     <CardImage imageSrc={item.img} />
-                       <Text></Text>
-                     <Title2>{item.name}</Title2>
-                     <Price>$ {item.price} U$D</Price>
-                   </Card>))}
-            </div>
-          </div>
-        )}
-      </div>
-    );
+  const handleClick = (marca) => {
+    if (marca === selected) {
+      setSelected(null);
+    } else {
+      setSelected(marca);
+    }
   };
-  
-  export default CardComponent;
+
+  return (
+    <SectionContainer>
+      <Section>
+        <FlipCardContainer>
+          <FlipCard>
+            <FlipCardInner>
+              <FlipCardFront>
+                <Title>Apple</Title>
+              </FlipCardFront>
+              <FlipCardBack onClick={() => handleClick("iPhone")}>
+                <Title>Comprar</Title>
+              </FlipCardBack>
+            </FlipCardInner>
+          </FlipCard>
+        </FlipCardContainer>
+
+
+        <FlipCardContainer>
+          <FlipCard>
+            <FlipCardInner>
+              <FlipCardFront>
+                <Title>Samsung</Title>
+              </FlipCardFront>
+              <FlipCardBack onClick={() => handleClick("Samsung")}>
+                <Title>Comprar</Title>
+              </FlipCardBack>
+            </FlipCardInner>
+          </FlipCard>
+        </FlipCardContainer>
+
+        <FlipCardContainer>
+          <FlipCard>
+            <FlipCardInner>
+              <FlipCardFront>
+                <Title>Motorola</Title>
+              </FlipCardFront>
+              <FlipCardBack onClick={() => handleClick("Motorola")}>
+                <Title>Comprar</Title>
+              </FlipCardBack>
+            </FlipCardInner>
+          </FlipCard>
+        </FlipCardContainer>
+
+        <FlipCardContainer>
+          <FlipCard>
+            <FlipCardInner>
+              <FlipCardFront>
+                <Title>Huaweii</Title>
+              </FlipCardFront>
+              <FlipCardBack onClick={() => handleClick("Huawei")}>
+                <Title>Comprar</Title>
+              </FlipCardBack>
+            </FlipCardInner>
+          </FlipCard>
+        </FlipCardContainer>
+      </Section>
+
+
+      {selected !== null && (
+          <CardContainer>
+            {filteredData.map((product) => (
+              <Card>
+                <div id="PhoneModal" className={'PhoneimgModal'+ product.id}>
+                  <Text></Text>
+                </div>
+                <Title2>{product.name}</Title2>
+                <Price>$ {product.price} U$D</Price>
+                <Button onClick={() => onAddProducts(product)}>Comprar</Button>
+              </Card>
+              ))}
+          </CardContainer>
+      )}
+    </SectionContainer>
+  );
+};
+
+export default CardComponent;
 

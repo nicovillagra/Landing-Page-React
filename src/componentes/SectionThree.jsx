@@ -85,7 +85,21 @@ transform: translate(3px, 3px);
 `
 
 
-const SectionThree = () => {
+const SectionThree = ({allProducts, setAllProducts}) => {
+
+    const onAddProducts = (product) =>{
+        if(allProducts.find(item =>item.id === product.id)){
+          const products = allProducts.map(item => item.id === product.id ? {...item, quantity:item.quantity + 1}:
+            item);
+            return setAllProducts([...products])
+    
+        };
+    
+        setAllProducts([...allProducts,product]);
+        
+    }
+    console.log(allProducts)
+
     return (
         
         <Section>
@@ -104,7 +118,7 @@ const SectionThree = () => {
                         <CheckListItem>{product.benefitTrhee}</CheckListItem>
                         <CheckListItem>{product.benefitFour}</CheckListItem>
                     </CheckList>
-                    <Button>Comprar</Button>
+                    <Button onClick={() => onAddProducts(product)}>Comprar</Button>
                 </PricingBlockContent></Card>
             ))}
         </Section>

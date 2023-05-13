@@ -58,11 +58,117 @@ a{
   width: 300px;
   height: 400px;
 }
-.PhoneimgModal
-{
-  background: url(./assets/phone2.jpg) no-repeat center/cover;
+#PhoneModal{
   width: 100%;
   height: 100%;
   display: grid;
   place-items: center;
+  border-radius: 10px;
+}
+.PhoneimgModal1
+{
+  background: url(./assets/phone1.jpg) no-repeat center/cover;
+}
+.PhoneimgModal2
+{
+  background: url(./assets/phone2.jpg) no-repeat center/cover;
+}
+.PhoneimgModal3
+{
+  background: url(./assets/phone3.jpg) no-repeat center/cover;
+}
+.PhoneimgModal4
+{
+  background: url(./assets/phone5.jpg) no-repeat center/cover;
+}
+.PhoneimgModal5
+{
+  background: url(./assets/phone6.jpg) no-repeat center/cover;
+}
+.PhoneimgModal6
+{
+  background: url(./assets/phone7.jpg) no-repeat center/cover;
+}
+.PhoneimgModal7
+{
+  background: url(./assets/phone8.jpg) no-repeat center/cover;
+}
+.PhoneimgModal8
+{
+  background: url(./assets/phone9.jpg) no-repeat center/cover;
+}
+.PhoneimgModal9
+{
+  background: url(./assets/phone10.jpg) no-repeat center/cover;
+}
+.PhoneimgModal10
+{
+  background: url(./assets/phone11.jpg) no-repeat center/cover;
+}
+.PhoneimgModal11
+{
+  background: url(./assets/Motorola1.jpg) no-repeat center/cover;
+}
+.PhoneimgModal12
+{
+  background: url(./assets/Motorola2.jpg) no-repeat center/cover;
+}
+.PhoneimgModal13
+{
+  background: url(./assets/Motorola3.jpg) no-repeat center/cover;
+}
+.PhoneimgModal14
+{
+  background: url(./assets/Motorola4.jpg) no-repeat center/cover;
+}
+.PhoneimgModal15
+{
+  background: url(./assets/Motorola5.jpg) no-repeat center/cover;
+}
+.PhoneimgModal16
+{
+  background: url(./assets/huawei1.jpg) no-repeat center/cover;
+}
+.PhoneimgModal17
+{
+  background: url(./assets/huawei2.jpg) no-repeat center/cover;
+}
+.PhoneimgModal18
+{
+  background: url(./assets/huawei3.jpg) no-repeat center/cover;
+}
+.PhoneimgModal19
+{
+  background: url(./assets/huawei4.jpg) no-repeat center/cover;
+}
+.PhoneimgModal20
+{
+  background: url(./assets/huawei5.jpg) no-repeat center/cover;
+}
+.product-container{
+  width:310px;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  margin-top: 75px;
+  margin-left: -170px;
+  background-color:rgba(0, 0, 0, 0.205);
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 10000;
+  }
+.hidden{
+  display:none;
+}
+.divisor{
+  width: 90%;
+  height: 5px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.356);
+}
+.Total-product{
+  font-family:font4;
+  color: white;
+  font-size: 25px;
 }

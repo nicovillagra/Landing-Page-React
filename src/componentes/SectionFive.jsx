@@ -131,7 +131,7 @@ const SectionFive = () => {
             <FlipCardFront>
               <Title>Huaweii</Title>
             </FlipCardFront>
-            <FlipCardBack onClick={Modal}>
+            <FlipCardBack>
               <Title>Comprar</Title>
             </FlipCardBack>
           </FlipCardInner>
