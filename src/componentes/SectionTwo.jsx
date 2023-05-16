@@ -10,6 +10,9 @@ background:#bdbffa;
 const HStyle = styled.h1`
 font-family='fuente1',sans-serif;
 font-size:100px;
+@media (max-width: 768px) {
+    font-size:70px;
+  }
 `
 const Div = styled.div`
 height: 800px;
@@ -41,6 +44,9 @@ width: 300px;
 height: 440px;
 display: flex;
 flex-direction: column;
+@media (max-width: 768px) {
+    height: 290px;
+  }
 `
 const OfferContainer = styled.div`
 width: 100%;

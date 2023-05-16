@@ -6,11 +6,12 @@ import { data } from '../data'
 const Section = styled.section`
 width:100%;
 height:800px;
-background:#bdbffa;
+background:#a7ecd6;
 display:flex;
 gap:5px;
 justify-content: space-evenly;
 align-items: center;
+flex-direction: column;
 `
 const Card = styled.div`
 width: 210px;
@@ -21,6 +22,10 @@ border-radius: 1rem;
 border: .5vmin solid #05060f;
 box-shadow: .4rem .4rem #05060f;
 overflow: hidden;
+@media (max-width: 768px) {
+    width: 172px;
+    height: 334px;
+  }
 `
 const PricingBlockContent = styled.div`
 display: flex;
@@ -40,6 +45,9 @@ color: #05060f;
 font-size: 1.8rem;
 line-height: 1.25;
 font-weight: 700;
+@media (max-width: 768px) {
+    font-size:20px;
+  }
 `
 const PriceNumber = styled.p`
 color:white;
@@ -53,6 +61,9 @@ color:black;
 const PricingNote = styled.div`
 opacity: .8;
 color:white;
+@media (max-width: 768px) {
+    display:none;
+  }
 `
 const CheckList = styled.ul`
 display: flex;
@@ -60,6 +71,11 @@ flex-direction: column;
 gap: .2rem;
 margin-top: .5rem;
 align-items: flex-start;
+@media (max-width: 768px) {
+    font-size:10px;
+    gap:0px;
+    margin-top:0px;
+  }
 `
 const CheckListItem = styled.li`
 display: flex;
@@ -82,19 +98,46 @@ margin: 35px 0;
  box-shadow: none;
 transform: translate(3px, 3px);
 }
+@media (max-width: 768px) {
+    margin:0px;
+    padding: 5px 20px;
+  }
+`
+const ContainerPlanes = styled.div`
+display:flex;
+aling-item:center;
+justify-content:center;
+gap:40px;
+@media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+  }
+`
+const Title = styled.h1`
+color:black;
+font-family:font3;
+font-size:30px;
+@media (max-width: 768px) {
+    text-align:center;
+  }
+
 `
 
-
-const SectionThree = ({allProducts, setAllProducts}) => {
+const SectionThree = ({allProducts, setAllProducts,countProducts,setCountProducts,total,setTotal}) => {
 
     const onAddProducts = (product) =>{
         if(allProducts.find(item =>item.id === product.id)){
           const products = allProducts.map(item => item.id === product.id ? {...item, quantity:item.quantity + 1}:
             item);
+            setCountProducts(countProducts + product.quantity)
+            setTotal(total + product.price * product.quantity)
             return setAllProducts([...products])
     
         };
-    
+        setTotal(total + product.price * product.quantity)
+        setCountProducts(countProducts + product.quantity)
         setAllProducts([...allProducts,product]);
         
     }
@@ -103,6 +146,8 @@ const SectionThree = ({allProducts, setAllProducts}) => {
     return (
         
         <Section>
+            <Title>Los mejores planes telefonicos para vos</Title>
+            <ContainerPlanes>
             {data.map(product =>(
                 <Card key={product.id}>
                 <PricingBlockContent>
@@ -121,6 +166,7 @@ const SectionThree = ({allProducts, setAllProducts}) => {
                     <Button onClick={() => onAddProducts(product)}>Comprar</Button>
                 </PricingBlockContent></Card>
             ))}
+            </ContainerPlanes>
         </Section>
     )
 }

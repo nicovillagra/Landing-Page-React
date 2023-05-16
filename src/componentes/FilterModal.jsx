@@ -49,6 +49,11 @@ const Card = styled.div`
     content: "Added !";
     height: 3.125em;
   }
+  @media (max-width: 768px) {
+    width: 167px;
+    height: 238px;
+  }
+  
 `;
 const CardImage = styled.div`
 width: 100%;
@@ -120,6 +125,10 @@ const FlipCard = styled.div`
   height: 254px;
   perspective: 1000px;
   font-family: sans-serif;
+  @media (max-width: 768px) {
+    width: 171px;
+    height: 229px;
+  }
 `;
 
 const Title = styled.h2`
@@ -182,35 +191,62 @@ const FlipCardContainer = styled.div`
 `;
 const Section = styled.div`
 width:100%;
-background:#bdbffa;
+background:#a7ecd6;
 height:300px;
 gap:60px;
 display:flex;
 align-items: center;
 justify-content: center;
+@media (max-width: 768px) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+  height:500px;
+}
 
 `
 const SectionContainer = styled.section`
 width:100%;
-background:#bdbffa;
+background:#a7ecd6;
 height:800px;
 display:flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media (max-width: 768px) {
+  justify-content: normal;
+  gap:30px;
+}
 `
 const CardContainer = styled.div`
 width:100%;
 height:600px;
 display:flex;
-background:#bdbffa;
+background:#a7ecd6;
 gap:30px;
 align-items: center;
 justify-content: center;
+@media (max-width: 768px) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  height:740px;
+}
 
 `
+const Title3 = styled.h1`
+color:black;
+font-family:font3;
+font-size:40px;
+@media (max-width: 768px) {
+  text-align:center;
+}
+`
 
-const CardComponent = ({allProducts,setAllProducts}) => {
+const CardComponent = ({allProducts, setAllProducts,countProducts,setCountProducts,total,setTotal}) => {
   const [selected, setSelected] = useState(null);
   const filteredData = CardsPhone.filter((item) => {
     if (selected === null) return false;
@@ -220,10 +256,13 @@ const CardComponent = ({allProducts,setAllProducts}) => {
     if(allProducts.find(item =>item.id === product.id)){
       const products = allProducts.map(item => item.id === product.id ? {...item, quantity:item.quantity + 1}:
         item);
+        setCountProducts(countProducts + product.quantity)
+        setTotal(total + product.price * product.quantity)
         return setAllProducts([...products])
 
     };
-
+    setTotal(total + product.price * product.quantity)
+    setCountProducts(countProducts + product.quantity)
     setAllProducts([...allProducts,product]);
     
 }
@@ -239,6 +278,7 @@ console.log(allProducts)
 
   return (
     <SectionContainer>
+      <Title3>Elige tu marca favorita</Title3>
       <Section>
         <FlipCardContainer>
           <FlipCard>
