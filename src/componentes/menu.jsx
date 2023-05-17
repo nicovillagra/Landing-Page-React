@@ -7,6 +7,8 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import Header from './header';
 
 const HeaderStyle = styled.header`
 height:100px;
@@ -83,11 +85,13 @@ background-color:rgba(0, 0, 0, 0.205);
 width:100%;
 height: auto;
 position: fixed;
-margin-top: 25px;
-margin-left: -1233px;
+left: 0;
+margin: auto;
+top: 95px;
 @media (max-width: 768px) {
   bottom:100px;
   left: 0;
+  top:0;
   margin: auto;
   backdrop-filter: blur(8px);
 }
@@ -187,6 +191,7 @@ const Menu = ({ allProducts, setAllProducts, total,countProducts, setCountProduc
               <>
                 
                   {allProducts.map(product => (
+                  
                   <Card key={product.id}>
                   <Img><div id="PhoneModal" className={'PhoneimgModal'+ product.id} ></div></Img>
                   <TextBox>
@@ -216,9 +221,9 @@ const Menu = ({ allProducts, setAllProducts, total,countProducts, setCountProduc
         {isOpen && (
           <Nav>
             <Ul>
-              <Li>Inicio</Li>
-              <Li>Login</Li>
-              <Li>registrarse</Li>
+              <Li><Link to="/">Inicio</Link></Li>
+              <Li><Link to="/login">Login</Link></Li>
+              <Li><Link to="/registro">Registrarse</Link></Li>
             </Ul>
           </Nav>
         )}

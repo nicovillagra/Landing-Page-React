@@ -7,6 +7,10 @@ import SectionTwo from './componentes/SectionTwo';
 import Modal from './componentes/Modal';
 import CardComponent from './componentes/FilterModal';
 import SectionThree from './componentes/SectionThree';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import Login from './componentes/Login';
+import Register from './componentes/Register';
+
 
 function App() {
   const [allProducts,setAllProducts] = useState([])
@@ -14,25 +18,40 @@ function App() {
   const [countProducts, setCountProducts] = useState(0)
   return (
     <>
-    <ChakraProvider>
-    <Menu
+    <Router>
+      <Routes>
+        <Route path='/' element={<Menu
         allProducts={allProducts} setAllProducts={setAllProducts}
         total={total} setTotal={setTotal}
         countProducts={countProducts} setCountProducts={setCountProducts}
-    />
-    <Header/>
-    <SectionTwo/>
-    <SectionThree 
+    />}>
+        </Route>
+    </Routes>
+    <Routes>
+      <Route path='/' element={<Header/>}></Route>
+    </Routes>
+    <Routes>
+      <Route path='/' element={<SectionTwo/>}></Route>
+    </Routes>
+    <Routes>
+      <Route path='/' element={<SectionThree 
     allProducts={allProducts} setAllProducts={setAllProducts}
     total={total} setTotal={setTotal}
     countProducts={countProducts} setCountProducts={setCountProducts}
-    />
-    <CardComponent
+    />}></Route>
+    </Routes>
+    <Routes>
+      <Route path='/' element={<CardComponent
             allProducts={allProducts} setAllProducts={setAllProducts}
             total={total} setTotal={setTotal}
             countProducts={countProducts} setCountProducts={setCountProducts}
-    />
-    </ChakraProvider>
+    />}></Route>
+    </Routes>
+    <Routes>
+      <Route path='/registro' element={<Register/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
+    </Routes>
+    </Router>
     </>
   );
 }
