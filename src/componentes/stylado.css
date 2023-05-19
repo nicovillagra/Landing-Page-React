@@ -318,11 +318,17 @@ a{
   text-decoration: none;
   color: white;
 }
+.Footer-Logo{
+  background: url(./assets/logoResponsive.png)no-repeat center/cover ;
+  width: 100px;
+  height: 100px;
+}
 
-@media (max-width: 600px){
+@media (max-width: 1115px){
 
   .container-portada{
     background: url(./assets/heroResponsive.png) no-repeat center/cover;
+    height: 1023px;
   }
   .product-container{
       bottom:100px;

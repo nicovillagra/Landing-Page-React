@@ -49,7 +49,7 @@ const Card = styled.div`
     content: "Added !";
     height: 3.125em;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 968px) {
     width: 167px;
     height: 238px;
   }
@@ -197,13 +197,14 @@ gap:60px;
 display:flex;
 align-items: center;
 justify-content: center;
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   justify-items: center;
   height:500px;
+
 }
 
 `
@@ -215,9 +216,10 @@ display:flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   justify-content: normal;
   gap:30px;
+  overflow: auto;
 }
 `
 const CardContainer = styled.div`
@@ -228,12 +230,14 @@ background:#a7ecd6;
 gap:30px;
 align-items: center;
 justify-content: center;
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   height:740px;
+  justify-items: center;
+  
 }
 
 `
@@ -241,7 +245,7 @@ const Title3 = styled.h1`
 color:black;
 font-family:font3;
 font-size:40px;
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   text-align:center;
 }
 `

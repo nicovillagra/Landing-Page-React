@@ -10,6 +10,7 @@ import SectionThree from './componentes/SectionThree';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Login from './componentes/Login';
 import Register from './componentes/Register';
+import Footer from './componentes/Footer';
 
 
 function App() {
@@ -46,6 +47,10 @@ function App() {
             total={total} setTotal={setTotal}
             countProducts={countProducts} setCountProducts={setCountProducts}
     />}></Route>
+    </Routes>
+    <Routes>
+      <Route path='/' element={<Footer/>}>
+      </Route>
     </Routes>
     <Routes>
       <Route path='/registro' element={<Register/>}></Route>

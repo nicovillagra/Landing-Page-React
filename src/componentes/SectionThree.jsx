@@ -12,6 +12,9 @@ gap:5px;
 justify-content: space-evenly;
 align-items: center;
 flex-direction: column;
+@media (max-width: 1115px) {
+  height:870px;
+}
 `
 const Card = styled.div`
 width: 210px;
@@ -22,9 +25,9 @@ border-radius: 1rem;
 border: .5vmin solid #05060f;
 box-shadow: .4rem .4rem #05060f;
 overflow: hidden;
-@media (max-width: 768px) {
-    width: 172px;
-    height: 334px;
+@media (max-width: 1115px) {
+    width: 80%;
+    height: 343px;
   }
 `
 const PricingBlockContent = styled.div`
@@ -38,6 +41,9 @@ color: #05060f;
 font-size: 1.3rem;
 line-height: 1.25;
 font-weight: 700;
+@media (max-width: 1115px) {
+  margin:0;
+}
 `
 const PriceValue = styled.div`
 display: flex;
@@ -45,8 +51,9 @@ color: #05060f;
 font-size: 1.8rem;
 line-height: 1.25;
 font-weight: 700;
-@media (max-width: 768px) {
+@media (max-width: 1115px) {
     font-size:20px;
+    align-items: center;
   }
 `
 const PriceNumber = styled.p`
@@ -61,7 +68,7 @@ color:black;
 const PricingNote = styled.div`
 opacity: .8;
 color:white;
-@media (max-width: 768px) {
+@media (max-width: 1115px) {
     display:none;
   }
 `
@@ -71,7 +78,7 @@ flex-direction: column;
 gap: .2rem;
 margin-top: .5rem;
 align-items: flex-start;
-@media (max-width: 768px) {
+@media (max-width: 1115px) {
     font-size:10px;
     gap:0px;
     margin-top:0px;
@@ -98,7 +105,7 @@ margin: 35px 0;
  box-shadow: none;
 transform: translate(3px, 3px);
 }
-@media (max-width: 768px) {
+@media (max-width: 1115px) {
     margin:0px;
     padding: 5px 20px;
   }
@@ -108,18 +115,19 @@ display:flex;
 aling-item:center;
 justify-content:center;
 gap:40px;
-@media (max-width: 768px) {
+@media (max-width: 1115px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
+    justify-items: center;
   }
 `
 const Title = styled.h1`
 color:black;
 font-family:font3;
 font-size:30px;
-@media (max-width: 768px) {
+@media (max-width: 1115px) {
     text-align:center;
   }
 
